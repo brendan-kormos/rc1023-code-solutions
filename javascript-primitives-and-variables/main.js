@@ -1,6 +1,7 @@
 const fullName = 'Brendan Kormos';
 const isCool = true;
 const totalPets = 2;
+
 console.log('fullName:', fullName);
 console.log('isCool:', isCool);
 console.log('totalPets:', totalPets);
