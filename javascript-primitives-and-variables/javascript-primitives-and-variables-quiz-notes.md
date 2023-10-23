@@ -7,6 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the purpose of variables?
   to store and use data with ease
 - How do you **declare** a variable?
+
   use a keyword such as let, const, or var infront of a string. example: let variable
 
 - How do you initialize (**assign a value to**) a variable?
