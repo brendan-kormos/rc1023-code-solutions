@@ -23,7 +23,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you break a string up into an array?
   string.split(pattern)
 - Do string methods change the original string? How would you check if you weren't sure?
-  they do not. i could use console.log() and check a variable after running a string manipulation method
+  they do not. i could use console.log() and check a variable after calling a string manipulation method
 - Roughly how many string methods are there according to the MDN Web docs?
   52
 - Is the return value of a function or method useful in every situation?
