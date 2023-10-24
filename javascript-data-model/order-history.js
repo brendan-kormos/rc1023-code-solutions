@@ -31,7 +31,7 @@ const orderHistory = [
     items: [
       {
         title:
-          'Gamecube Controller Adapter. :Super Smash Bros Switch Gamecube Adapter for WII U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
+          'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube Adapter for WII U, PC. Support Turbo and Vibration Features. No Driver and No Lag-Gamecube Adapter',
         author: null,
         itemCost: 15.98,
         returnBy: '8.5.2020',
