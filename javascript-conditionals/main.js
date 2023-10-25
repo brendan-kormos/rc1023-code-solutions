@@ -73,5 +73,7 @@ function recommendMovie(genre) {
       return 'Tick, Tick... Boom!';
     case 'sci-fi':
       return 'Blade Runner 2049';
+    default:
+      return 'Genre not recognized. Choose between action, comedy, horror, drama, musical, or sci-fi';
   }
 }
