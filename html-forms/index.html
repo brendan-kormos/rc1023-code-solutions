@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Coding Form!</h1>
+    <form>
+      <div>
+        <div>
+          <label for="mail">Email:</label>
+        </div>
+        <input type="email" id="mail" name="user_email" />
+      </div>
+      <div>
+        <label for="coolSelect"> Why is coding cool? </label>
+        <div>
+          <select id="coolSelect" name="coolSelectName">
+            <option value="">Select an option</option>
+            <option value="interesting">It's interesting</option>
+            <option value="fun">It's fun</option>
+            <option value="powerful">It's powerful</option>
+          </select>
+        </div>
+        <div>
+          <p>Favorite Language (choose one)</p>
+          <label for="title_1">
+            <input type="radio" id="title_1" name="title" value="A" />
+            HTML
+          </label>
+          <label for="title_2">
+            <input type="radio" id="title_2" name="title" value="K" />
+            CSS
+          </label>
+          <label for="title_3">
+            <input type="radio" id="title_3" name="title" value="Q" />
+            JavaScript
+          </label>
+        </div>
+      </div>
+      <div>
+        <div>
+          <label for="comments">Comments</label>
+        </div>
+        <textarea id="comments" name="user_comments"></textarea>
+      </div>
+      <div class="button">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
