@@ -11,30 +11,38 @@
   </head>
   <body>
     <form>
-      <h3>LEARN MORE</h3>
+      <h3>Learn More</h3>
       <div>
-        <label for="email">COMPANY EMAIL</label>
+        <label id="emailLabel" for="email">Company email</label>
       </div>
-      <input type="email" name="email" id="email" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="sally@company.co" />
       <div>
-        <label for="name">NAME</label>
+        <label for="name">Name</label>
       </div>
-      <input type="text" name="name" id="name" />
+      <input type="text" name="name" id="name" placeholder="Brendan Kormos" />
       <div>
-        <label for="location">WHERE ARE YOU HIRING?</label>
+        <label for="location">Where are you hiring?</label>
       </div>
-      <input type="text" name="location" id="location" />
+      <input
+        type="text"
+        name="location"
+        id="location"
+        placeholder="City, Country" />
       <div>
         <label for="selection"
-          >HOW MANY ENGINEERS ARE YOU HIRING IN THE NEXT 6 MONTHS?</label
+          >How many engineers are you hiring in the next 6 months?</label
         >
       </div>
       <select name="selection" id="selection">
         <option value="1-2">1-2 Engineers</option>
-        <option value="1-2">3-4 Engineers</option>
+        <option value="3-4">3-4 Engineers</option>
       </select>
-      <div>
-        <button>SUBMIT</button>
+      <div id="submitdiv">
+        <button id="submit">Submit</button>
       </div>
     </form>
   </body>

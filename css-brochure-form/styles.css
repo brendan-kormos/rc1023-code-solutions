@@ -1,0 +1,75 @@
+body {
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  width: 300px;
+  text-align: left;
+}
+
+form > h3 {
+  text-align: center;
+}
+
+form > input {
+  width: 100%;
+  text-align: left;
+}
+
+form > select {
+  width: 100%;
+}
+
+#submitdiv {
+  text-align: right;
+}
+
+#submit {
+  margin-top: 10px;
+  margin-left: 220px;
+  padding: 8px 10px;
+  border-radius: 1rem;
+  border: 0;
+}
+
+/* body{
+  text-align: center;
+  font-family: sans-serif;
+}
+
+
+form{
+  text-align: left;
+  display: inline-block;
+  width: 300;
+
+}
+
+select, input{
+  width: 300px;
+}
+
+h3{
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+  color:orangered
+}
+
+label{
+  padding-left:1em;
+  text-transform: uppercase;
+  text-align: left;
+  color:blue;
+  font-style: bold;;
+  font-size: .5rem
+}
+
+div > button{
+  text-align: right;
+  background-color: rgb(255, 48, 48);
+  border-radius: 2rem;
+  border: 0;
+  padding: 5px 10px
+} */
