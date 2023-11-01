@@ -11,6 +11,7 @@ button:hover {
   background-color: black;
   color: white;
   border-color: lightgrey;
+  cursor: pointer;
 }
 
 thead {
