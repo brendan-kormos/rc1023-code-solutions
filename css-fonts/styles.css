@@ -1,5 +1,12 @@
-h1 {
-  /* font-family: 'Bungee Spice', sans-serif; */
-  background-color: blue;
-  /* font-family: 'Roboto', sans-serif; */
+h1,
+h2 {
+  font-family: 'Loto', serif;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  line-height: 1.25;
 }
