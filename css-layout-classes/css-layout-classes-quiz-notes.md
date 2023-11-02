@@ -9,10 +9,11 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the default `flex-direction` of an element with `display: flex`?
   row
 - What are the three primary components of a page layout? (Which helper classes do you need?)
-
+  div, header, paragraph
 - What is the minimum number of **columns** that you should put in a **row**?
-
+  one
 - What is the purpose of a **container**?
+  to hold and manipulate components with more clarity and ease
 
 ## Notes
 
