@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+div {
+  /* border: 1px solid red; */
+  min-height: 50px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.column-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.column-one-fourth {
+  flex-basis: 25%;
+}
+
+.column-two-third {
+  flex-basis: calc(200% / 3);
+}
+
+.row {
+  display: flex;
+}
+
+.character-img {
+  width: 100%;
+}
