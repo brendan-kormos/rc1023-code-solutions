@@ -5,13 +5,13 @@
   box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.5);
 }
 
-.card-wrapper {
-  width: 300px;
-}
-
 .pokemon-card img {
   width: 100%;
   background-color: lightgray;
+}
+
+.card-wrapper {
+  width: 300px;
 }
 
 #card-deck {
