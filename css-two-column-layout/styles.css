@@ -1,0 +1,51 @@
+* {
+  /* border: solid 2px red */
+}
+
+body {
+  font-family: Karla, sans-serif;
+}
+
+h1 {
+  margin-top: 5rem;
+  letter-spacing: 0.25rem;
+  font-size: 3rem;
+}
+
+header > p {
+  line-height: 3rem;
+  margin-bottom: 5rem;
+  font-size: 1.25rem;
+  color: rgb(105, 105, 105);
+}
+
+#row-one {
+  text-align: center;
+}
+
+/* .container{
+  display: flex;
+  flex-direction: column;
+} */
+
+#row-two {
+  display: flex;
+  width: 1200px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.item {
+  display: flex;
+  flex-basis: 50%;
+}
+
+.text-content {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.item > img {
+  width: 150;
+  height: 150px;
+}
