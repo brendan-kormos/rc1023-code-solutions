@@ -1,0 +1,21 @@
+.pokemon-card {
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.5);
+}
+
+.card-wrapper {
+  width: 300px;
+}
+
+.pokemon-card img {
+  width: 100%;
+  background-color: lightgray;
+}
+
+#card-deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
