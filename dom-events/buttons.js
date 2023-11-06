@@ -6,7 +6,7 @@ function handleClick(event) {
 
 document.querySelector('.click-button').addEventListener('click', handleClick);
 
-function handleMouserover(event) {
+function handleMouseover(event) {
   console.log('button hovered');
   console.log('event:', event);
   console.log('target', event.target);
@@ -14,7 +14,7 @@ function handleMouserover(event) {
 
 document
   .querySelector('.hover-button')
-  .addEventListener('mouseover', handleMouserover);
+  .addEventListener('mouseover', handleMouseover);
 
 function handleDoubleClick(event) {
   console.log('button double clicked');
