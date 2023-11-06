@@ -41,11 +41,33 @@ header > p {
 }
 
 .text-content {
-  font-size: 20px;
-  line-height: 30px;
+  color: gray;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.text-content > h2 {
+  color: rgb(27, 27, 27);
+  font-size: 1.25rem;
 }
 
 .item > img {
-  width: 150;
   height: 150px;
+  margin: 2rem;
+}
+
+#row-three {
+  display: flex;
+  justify-content: center;
+}
+
+.learn-more {
+  height: 3rem;
+  padding: 0.5rem 3rem;
+  color: red;
+  background-color: white;
+  margin: 2rem;
+  border: 2px solid;
+  font-weight: bold;
+  font-size: 1rem;
 }
