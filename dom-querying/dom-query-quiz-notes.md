@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Why do we log things to the console?
   for debugging and additional information
 - What is a "model"?
-  a set of objects provided by the browser
+  the structure of something
 - Which "document" is being referred to in the phrase Document Object Model?
   the root of the current web page
 - What is the word "object" referring to in the phrase Document Object Model?
