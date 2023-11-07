@@ -1,0 +1,9 @@
+.card-wrapper {
+  width: 300px;
+}
+
+#card-deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
