@@ -1,16 +1,13 @@
 * {
-  border: solid 1px red;
+  /* border: solid 1px red; */
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace;
   margin: 8px;
-
-  /* height:100vh */
 }
 
-.open-modal-container {
-  /* display:flex */
+.button-shadow {
+  box-shadow: 0 2px 5px 0 black;
 }
 
 .open-modal-button {
@@ -20,7 +17,6 @@ body {
   font-size: 1.5rem;
   border-radius: 5px;
   border: 0;
-  box-shadow: 0 2px 5px 0 black;
 }
 
 .open-modal-button:hover {
@@ -28,8 +24,8 @@ body {
 }
 
 #modal-main {
-  background-color: #0000007f;
-  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
   position: fixed;
   justify-content: center;
   align-items: center;
@@ -39,33 +35,40 @@ body {
   left: 0;
 }
 
-.survey-container {
-  display: flex;
-  position: fixed;
-}
-
 .survey-content {
+  background-color: white;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   border-radius: 5px;
-  border: solid 2px red;
-  padding: 5rem;
-  align-items: center;
-}
-
-.survey-content > button {
-  text-transform: uppercase;
+  width: 27rem;
+  height: 14rem;
+  align-items: center; /* keeps button center hoprizontally */
   justify-content: center;
-  width: 6rem;
-
-  /* margin-top:10px; */
-  padding: 0.5rem 0;
 }
 
 .survey-content > h2 {
-  /* margin: auto */
+  position: relative;
+  font-weight: 900;
+  font-size: 1.75rem;
+}
+
+.survey-content > button {
+  color: white;
+  background-color: rgba(255, 74, 28, 0.8);
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+  width: 6rem;
+  margin-top: 2rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .visible {
