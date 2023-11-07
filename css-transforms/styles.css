@@ -22,7 +22,7 @@ body {
 }
 
 .pokeball-wrapper:last-child img {
-  transform: rotate(-35deg);
+  transform: rotate(35deg);
 }
 
 img.pokeball {
