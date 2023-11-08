@@ -1,7 +1,5 @@
 const $formElement = document.querySelector('form');
 
-console.dir($formElement);
-
 $formElement.addEventListener('submit', function (event) {
   event.preventDefault();
   const elements = $formElement.elements;
@@ -10,4 +8,3 @@ $formElement.addEventListener('submit', function (event) {
   console.log('message', elements.message.value);
   $formElement.reset();
 });
-console.dir($formElement.elements);

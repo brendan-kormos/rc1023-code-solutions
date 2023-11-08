@@ -11,7 +11,6 @@ function handleInput(event) {
 }
 
 for (let i = 0; i < $inputElements.length; i++) {
-  console.dir($inputElements[i]);
   $inputElements[i].addEventListener('blur', handleBlur);
   $inputElements[i].addEventListener('focus', handleFocus);
   $inputElements[i].addEventListener('input', handleInput);
