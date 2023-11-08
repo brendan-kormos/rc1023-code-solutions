@@ -9,7 +9,11 @@ for (let i = 0; i < textMessage.length; i++) {
 
   newElement.className = 'text';
   if (i === 0) newElement.classList.add('selected');
-  newElement.textContent = textMessage[i];
+  const letter = textMessage[i];
+  if (letter === ' ') {
+    // letter = '&apos;';
+  }
+  newElement.textContent = letter;
   spanElements.push(newElement);
   $textBody.appendChild(newElement);
 }
