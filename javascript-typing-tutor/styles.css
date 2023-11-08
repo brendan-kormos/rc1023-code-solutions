@@ -37,14 +37,14 @@ body {
 }
 
 .text-body {
-  display: flex;
+  /* display: flex; */
   grid-gap: 1.1rem;
 
   /* align-items */
 }
 
 .text {
-  width: 20px;
+  margin: 0; /* can just remove */
 
   /* display:inline-block;
   width: 1.5ch;
