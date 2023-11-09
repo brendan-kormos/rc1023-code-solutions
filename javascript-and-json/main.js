@@ -26,4 +26,4 @@ console.log('typeof:', typeof stringJSON);
 
 const obj = JSON.parse(stringJSON);
 console.log('parsedObject:', obj);
-console.log('type:', obj);
+console.log('type:', typeof obj);
