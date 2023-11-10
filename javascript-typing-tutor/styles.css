@@ -21,8 +21,7 @@ body {
   font-family: Symbola, sans-serif;
   font-size: 3rem;
   font-weight: 600;
-
-  /* margin:0; */
+  margin: 0;
   height: 100vh;
 
   /* white-space:pre; */
@@ -37,35 +36,17 @@ body {
 
 .text-body {
   display: flex;
-  grid-gap: 1.1rem;
-
-  /* align-items:flex-start; */
+  height: 1.4em;
+  white-space: pre;
 }
 
 .text {
-  margin: 0; /* can just remove */
-  width: 20px;
-
-  /* border-right: 10px; */
-
-  /* display:inline-block;
-  width: 1.5ch;
-  white-space: pre;
-  padding: 0;
-  border:none;
-  letter-spacing: .5ch */
-
-  /* inline-size:10px; */
-
-  /* margin-right:20px; */
-
-  /* margin:0px; */
-
-  /* text-align: center */
+  min-width: 0.7em;
+  text-align: center;
 }
 
 .selected {
-  border-bottom: solid;
+  border-bottom: solid 5px;
 
   /* padding:.25rem; */
   padding-bottom: 0.5rem;

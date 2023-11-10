@@ -2,7 +2,7 @@ const $textBody = document.querySelector('.text-body');
 const textMessage = 'grumpy wizards make toxic brew';
 const spanElements = [];
 let letterNum = 0;
-// let numWrong = 0
+// let numWrong = 0;
 
 for (let i = 0; i < textMessage.length; i++) {
   const newElement = document.createElement('span');
