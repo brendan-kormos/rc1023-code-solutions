@@ -4,8 +4,6 @@ const carouselProgressCircles$ =
   $carouselProgressContainer.querySelectorAll('.fa-circle');
 const $previous = document.querySelector('.previous');
 const $next = document.querySelector('.next');
-console.log(carouselProgressCircles$);
-console.log(typeof carouselProgressCircles$);
 
 let intervalID = null;
 let currentImage = 0;
@@ -29,29 +27,17 @@ function setImage(number) {
 }
 
 function nextImage() {
-  resetInterval();
-  carouselImages$[currentImage].classList.add('hidden');
-  carouselProgressCircles$[currentImage].classList.add('far');
-  carouselProgressCircles$[currentImage].classList.remove('fas');
-  currentImage++;
-  if (currentImage > carouselImages$.length - 1) currentImage = 0;
-  carouselImages$[currentImage].classList.remove('hidden');
-  carouselProgressCircles$[currentImage].classList.add('fas');
-  carouselProgressCircles$[currentImage].classList.remove('far');
+  let newNum = currentImage + 1;
+  if (newNum > carouselImages$.length - 1) newNum = 0;
+  setImage(newNum);
+  currentImage = newNum;
 }
 function previousImage() {
-  resetInterval();
-  carouselImages$[currentImage].classList.add('hidden');
-  carouselProgressCircles$[currentImage].classList.add('far');
-  carouselProgressCircles$[currentImage].classList.remove('fas');
-  currentImage--;
-  if (currentImage < 0) currentImage = carouselImages$.length - 1;
-  carouselImages$[currentImage].classList.remove('hidden');
-  carouselProgressCircles$[currentImage].classList.add('fas');
-  carouselProgressCircles$[currentImage].classList.remove('far');
+  let newNum = currentImage - 1;
+  if (newNum < 0) newNum = carouselImages$.length - 1;
+  setImage(newNum);
+  currentImage = newNum;
 }
-
-resetInterval();
 
 $carouselProgressContainer.addEventListener('click', function (event) {
   const $target = event.target;
@@ -64,5 +50,8 @@ $carouselProgressContainer.addEventListener('click', function (event) {
     }
   }
 });
+
+resetInterval();
+
 $next.addEventListener('click', nextImage);
 $previous.addEventListener('click', previousImage);
