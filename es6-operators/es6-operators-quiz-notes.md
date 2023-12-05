@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the `??` (nullish coalescing) operator and how does it differ from `||`?
   nullish coalescing checks if a value is null or undefined, || checks if something is true
 - What is the `?:` (ternary) operator? How does it differ from `if/else`?
-  it assigns values conditionally and reads as an if else statement. it differs because if/else can not be used in assigning values
+  runs code conditionally and reads as an if else statement and can be used to assign values conditionally. it differs because if/else can not be used in assigning values
 - What is the `?.` (optional chaining) operator? When would you use it?
   used to check the existence of a property exists within an object
 - What is `...` (spread) syntax? How do you use it with arrays and objects?
