@@ -10,7 +10,7 @@ const formatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
 });
 
-const formattedMap = priceMap.map(function (value, index) {
+const formattedMap = priceMap.map(function (value) {
   return formatter.format(value.price);
 });
 
