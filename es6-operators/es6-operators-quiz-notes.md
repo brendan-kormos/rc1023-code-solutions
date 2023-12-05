@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the `&&` (logical AND) and `||` (logical OR) operators and how can they be used outside of `if` statements?
-  they can be used to conditionally assign values to variables
+  they can be used to conditionally run code
 - What is "short-circuit evaluation" and how does it apply to `&&` and `||`?
   short circuit evaluation is when an expression is evaluated with an order of precedence, some operands will not be evaluated sometimes.
 - What is the `??` (nullish coalescing) operator and how does it differ from `||`?
