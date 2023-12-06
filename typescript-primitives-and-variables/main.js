@@ -1,0 +1,15 @@
+var fullName = 'Brendan Kormos';
+var isCool = true;
+var totalPets = 2;
+console.log('fullname', fullName);
+console.log('fullname typeof', typeof fullName);
+console.log('iscool', isCool);
+console.log('iscool typeof', typeof isCool);
+console.log('totalpets ', totalPets);
+console.log('totalpets typeof', typeof totalPets);
+var unknown = null;
+console.log('unknown ', unknown);
+console.log('unknown typeof', typeof unknown);
+var never = undefined;
+console.log('never ', never);
+console.log('never typeof', typeof never);
