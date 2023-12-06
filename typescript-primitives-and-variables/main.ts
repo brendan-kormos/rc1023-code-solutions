@@ -13,7 +13,7 @@ const unknown: null = null;
 console.log('unknown ', unknown);
 console.log('unknown typeof', typeof unknown);
 
-const never: undefined = undefined;
+let never: undefined;
 
 console.log('never ', never);
 console.log('never typeof', typeof never);
