@@ -1,0 +1,203 @@
+    1  git switch main
+    2  git branch npm-intro
+    3  git switch npm-intro
+    4  cd npm-intro
+    5  cp .npm-init.js ~/.npm-init.js
+    6  npm init --yes
+    7  npm install jquery
+    8  ls
+    9  ls
+   10  npm install --save-dev
+   11  ls
+   12  npm install eslint  --save-dev
+   13  npm run hello
+   14  cd ..
+   15  git status
+   16  git add --all
+   17  git status
+   18  git commit -m "typescript-intro completed, typescript installed"
+   19  git push origin typescript-intro 
+   20  git switch main
+   21  git switch typescript-intro 
+   22  git switch main
+   23  git branch typescript-primitives-and-variables
+   24  git switch typescript-primitives-and-variables
+   25  npm install typescript --save-dev
+   26  npm install
+   27  cd typescript-primitives-and-variables/
+   28  npx tsc --watch main.ts
+   29  cd typescript-primitives-and-variables/
+   30  npx tsc --watch main.ts
+   31  git status
+   32  git add --all
+   33  git commit -m "finished typescript-primitives-and-variables, installed typescript"
+   34  git push origin typescript-primitives-and-variables 
+   35  git add --all
+   36  git commit -m "fixed "never" variable declaration"
+   37  git push origin typescript-primitives-and-variables 
+   38  git switch main
+   39  git switch typescript-operators-and-expressions
+   40  git branch typescript-operators-and-expressions
+   41  git switch typescript-operators-and-expressions
+   42  git status
+   43  git switch main
+   44  git pull origin main
+   45  git switch typescript-operators-and-expressions
+   46  cd typescript-operators-and-expressions/
+   47  npx tsc --watch main.ts
+   48  git status
+   49  git add typescript-operators-and-expressions/
+   50  git commit -m "completed typescript-operators-and-expressions"
+   51  git push origin typescript-operators-and-expressions 
+   52  git switch main
+   53  git branch typescript-objects
+   54  git switch typescript-objects
+   55  cd typescript-objects/
+   56  npx tsc --watch main.ts
+   57  git status
+   58  git status
+   59  git add typescript-objects/
+   60  git commit -m "completed typescript-objects"
+   61  git push origin typescript-objects 
+   62  git switch main
+   63  git branch typescript-functions
+   64  git switch typescript-functions
+   65  cd typescript-functions/
+   66  npx tsc --watch main.jts
+   67  npx tsc --watch main.ts
+   68  git add typescript-functions/
+   69  git status
+   70  git commit -m "completed typescript-functions"
+   71  git push origin typescript-functions 
+   72  git status
+   73  git restore typescript-functions/
+   74  git restore typescript-functions/
+   75  git switch main
+   76  cd typescript-algos/
+   77  npm run test --watch fuzeBuzz
+   78  npm run test --watch underThirty
+   79  npm run test --watch charCounts
+   80  npm run test --watch firstChars
+   81  npm run test --watch firstChars
+   82  npm run test --watch first-chars
+   83  npm run test --watch is-anagram
+   84  cd ..
+   85  git add typescript-algos/
+   86  git commit -m "Completed typescript-algos"
+   87  git push origin typescript-algos 
+   88  cd typescript-algos/
+   89  npm run test
+   90  cd ..
+   91  git switch main
+   92  git switch objects-revisited 
+   93  git restore objects-revisited/
+   94  git status
+   95  git switch main
+   96  git switch css-positioning/
+   97  git switch css-positioning
+   98  git pull origin main
+   99  git switch main
+  100  git branch command-line-basics
+  101  git switch command-line-basics
+  102  cd command-line-basics/
+  103  man
+  104  man man
+  105  man cat
+  106  man cat laziness.txt
+  107  man cat
+  108  man cat -a laziness.txt
+  109  man cat f - g laziness.txt
+  110  man cat laziness.txt
+  111  man cat laziness.txt f-g
+  112  man cat laziness.txt f - g
+  113  man cat laziness.txt
+  114  cat laziness.txt
+  115  cat impatience.txt
+  116  cat hubris.txt
+  117  cat laziness.txt impatience.txt
+  118  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  119  cat three-virtues.txt 
+  120  main ls
+  121  main Is
+  122  main ls
+  123  main ls
+  124  man ls
+  125  man cat
+  126  man ls
+  127  man ls
+  128  man ls
+  129  ls -aF lfz-staff > lfz-staff/contents.txt
+  130  ls -aF lfz-staff > lfz-staff/contents.txt
+  131  ls -aF lfz-staff
+  132  cat  lfz-staff
+  133  cat lfz-staff/contents.txt
+  134  cat lfz-staff/contents.txt
+  135  man ls
+  136  q
+  137  man pwd
+  138  pwd
+  139  pwd > i-was-here.txt
+  140  ls
+  141  cat i-was-here.txt
+  142  man echo
+  143  man echo
+  144  echo hi
+  145  echo 'Hello, World!' > hello.txt
+  146  ls pwd
+  147  ls
+  148  cat
+  149  cat hello.txt
+  150  cd command-line-basics/
+  151  cat hello.txt
+  152  man touch
+  153  man touch
+  154  touch tag-youre-it.txt
+  155  touch snoot/boop.txt
+  156  ls snoot
+  157  man mkdir
+  158  mkdir parent
+  159  ls parent/
+  160  la parent
+  161  ls parent
+  162  man mv
+  163  man rm
+  164  man cp
+  165  pwd
+  166  mkdir
+  167  mkdir parent/child/grandchild -p
+  168  ls parent
+  169  touch parent/child/grandchild .gitkeep
+  170  touch  .gitkeep parent/child/grandchild
+  171  man touch
+  172  touch  parent/child/grandchild/.gitkeep
+  173  touch parent/child/grandchild/.gitkeep
+  174  la -a parent
+  175  ls -a parent
+  176  ls -a parent/child/grandchild
+  177  man mv
+  178  mv pkiemans > pokemon
+  179  man mv
+  180  mv pokiemans > pokemon
+  181  mv pokiemans > pokemon
+  182  mv pokiemans  pokemon
+  183  mv pokiemans  pokemon
+  184  ls
+  185  ls pokemon
+  186  man rm
+  187  rm lol.txt
+  188  ls
+  189  ls lo.txt
+  190  ls lol.txt
+  191  rm -r kill/me
+  192  rm -r -r kill-me
+  193  man rm
+  194  ls kill-me
+  195  ls kill-me/
+  196  man cp
+  197  man cp
+  198  man cp
+  199  cp and-then.txt no-and-then.txt
+  200  ls 
+  201  cat and-then.txt no-and-then.txt
+  202  man history
+  203  history > command-history.txt
