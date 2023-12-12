@@ -5,5 +5,5 @@ promise
     console.log(value);
   })
   .catch((value) => {
-    console.log(value);
+    console.log(value.message);
   });
