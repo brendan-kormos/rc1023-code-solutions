@@ -22,42 +22,46 @@ async function readNotes(): Promise<void> {
   for (const key in data.notes) console.log(`${key}: ${data.notes[key]}`);
 }
 
-async function addNote(): Promise<void> {
+async function createNote(value: string): Promise<void> {
   const data = await getData();
-  data.notes[data.nextId] = arg1;
+  if (!value) throw new Error('Pass an argument for the notes value!');
+  data.notes[data.nextId] = value;
   data.nextId++;
   await writeData(data);
 }
 
-async function deleteNote(): Promise<void> {
+async function deleteNote(key: string): Promise<void> {
   const data = await getData();
-  delete data.notes[arg1];
+  if (!data.notes[key]) throw new Error('Note does not exist!');
+  delete data.notes[key];
   await writeData(data);
 }
 
-async function updateNote(): Promise<void> {
+async function updateNote(key: string, value: string): Promise<void> {
   const data = await getData();
-  data.notes[arg1] = arg2;
+  const found = data.notes[key];
+  if (!found) throw new Error('Note does not exist!');
+  data.notes[key] = value;
   await writeData(data);
 }
 
 try {
   switch (action) {
-    case 'add':
-      await addNote();
+    case 'create':
+      await createNote(arg1);
       break;
     case 'read':
       await readNotes();
       break;
     case 'update':
-      await updateNote();
+      await updateNote(arg1, arg2);
       break;
     case 'delete':
-      await deleteNote();
+      await deleteNote(arg1);
       break;
 
     default:
-      console.log('invalid action. try: add, read, update, delete');
+      console.log('invalid action. try: create, read, update, delete');
   }
 } catch (error) {
   console.error(error);
