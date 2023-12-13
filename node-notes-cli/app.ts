@@ -44,20 +44,16 @@ async function updateNote(): Promise<void> {
 try {
   switch (action) {
     case 'add':
-      console.log('add');
       await addNote();
       break;
     case 'read':
-      console.log('read');
       await readNotes();
       break;
     case 'update':
-      console.log('update');
       await updateNote();
       break;
     case 'delete':
       await deleteNote();
-      console.log('delete');
       break;
 
     default:
