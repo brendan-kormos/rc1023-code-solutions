@@ -1,0 +1,80 @@
+* {
+  /* border: solid 1px red; */
+}
+
+body {
+  margin: 8px;
+}
+
+.button-shadow {
+  box-shadow: 0 2px 5px 0 black;
+}
+
+.open-modal-button {
+  background-color: mediumslateblue;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 0;
+}
+
+.open-modal-button:hover {
+  cursor: pointer;
+}
+
+#modal-main {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.survey-content {
+  background-color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 27rem;
+  height: 14rem;
+  align-items: center; /* keeps button center hoprizontally */
+  justify-content: center;
+}
+
+.survey-content > h2 {
+  position: relative;
+  font-weight: 900;
+  font-size: 1.75rem;
+}
+
+.survey-content > button {
+  color: white;
+  background-color: rgba(255, 74, 28, 0.8);
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  text-transform: uppercase;
+  width: 6rem;
+  margin-top: 2rem;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
