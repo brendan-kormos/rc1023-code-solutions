@@ -38,7 +38,6 @@ app.get('/api/grades', (req, res, next) => {
   for (const key in grades) {
     array.push(grades[key]);
   }
-  res.setHeader('Content-Type', 'application/json');
   res.json(array);
   next();
 });
