@@ -51,7 +51,6 @@ function reconcileWithSchema(
 app.get('/api/grades', (req, res, next) => {
   const array: Grade[] = [];
   for (const key in grades) {
-    console.log(key);
     array.push(grades[key]);
   }
   res.json(array);
@@ -60,7 +59,6 @@ app.get('/api/grades', (req, res, next) => {
 
 app.post('/api/grades', (req, res, next) => {
   const body: PostRequestGrade = req.body;
-  console.log('hello', body);
   const [success, value] = reconcileWithSchema(body, requestGradeSchema);
   if (success) {
     grades[nextID] = value as Grade;
