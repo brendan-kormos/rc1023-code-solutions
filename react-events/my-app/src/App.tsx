@@ -33,21 +33,15 @@ function App() {
       </p>
 
       <CustomButton
-        onCustomClick={(text: string) => {
-          handleCustomClick(text);
-        }}
+        onCustomClick={handleCustomClick}
         text="I'M FIRST!!"
         color="#9da832"></CustomButton>
       <CustomButton
-        onCustomClick={(text: string) => {
-          handleCustomClick(text);
-        }}
+        onCustomClick={handleCustomClick}
         text="SECOND!"
         color="#f05d5e"></CustomButton>
       <CustomButton
-        onCustomClick={(text: string) => {
-          handleCustomClick(text);
-        }}
+        onCustomClick={handleCustomClick}
         text="third!"
         color="#e7ecef"></CustomButton>
     </>
