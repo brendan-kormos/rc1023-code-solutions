@@ -1,0 +1,32 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.toggle-switch {
+  width: 60px;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 20px;
+  position: relative;
+  outline: 1px solid black;
+}
+
+.toggle-switch-is-on {
+  background-color: rgb(0, 150, 0);
+}
+
+.toggle-slider {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 100%;
+  outline: 1px solid black;
+  position: relative;
+}
+
+.toggle-slider-is-on {
+  left: 40px;
+}
