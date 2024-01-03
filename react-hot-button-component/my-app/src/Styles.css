@@ -1,0 +1,58 @@
+.hot-button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0;
+  position: relative;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  box-shadow: 4px 4px 0 black;
+}
+
+.hot-button:focus {
+  outline: none;
+}
+
+.hot-button:active {
+  top: 3px;
+}
+
+.hot-button.cold {
+  background-color: rgb(53, 28, 117);
+}
+
+.hot-button.cool {
+  background-color: rgb(103, 78, 167);
+}
+
+.hot-button.tepid {
+  background-color: rgb(224, 102, 102);
+}
+
+.hot-button.warm {
+  background-color: rgb(246, 178, 107);
+}
+
+.hot-button.hot {
+  background-color: rgb(231, 231, 73);
+}
+
+.hot-button.nuclear {
+  background-color: rgb(255, 255, 255);
+}
+
+.hot-button.warm,
+.hot-button.hot,
+.hot-button.nuclear {
+  color: black;
+}
+
+.hot-button.cool,
+.hot-button.cold,
+.hot-button.tepid {
+  color: white;
+}
+
+.click-count {
+  padding: 0.5rem 0;
+  text-align: center;
+}
