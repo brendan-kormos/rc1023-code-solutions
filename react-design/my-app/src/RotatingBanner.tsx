@@ -4,15 +4,36 @@ interface Props {
 }
 
 export function RotatingBanner({ items }: Props) {
-  const [index] = useState(0);
-  const [word] = useState(items[0]);
+  const [index, setIndex] = useState(0);
+  const [word, setWord] = useState(items[0]);
+
+  function handleIndicatorClicked(index: number) {
+    setIndex(index);
+    setWord(items[index]);
+  }
+
+  function handleNextClicked() {
+    const newIndex = (index + 1) % items.length;
+    setIndex(newIndex);
+    setWord(items[newIndex]);
+  }
+
+  function handlePrevClicked() {
+    const newIndex = (index - 1 + items.length) % items.length;
+    setIndex(newIndex);
+    setWord(items[newIndex]);
+  }
 
   return (
     <>
       <Banner word={word} />
-      <Prev />
-      <Indicators currentIndex={index} items={items} />
-      <Next />
+      <Prev onPrevClicked={handlePrevClicked} />
+      <Indicators
+        onIndicatorClicked={handleIndicatorClicked}
+        currentIndex={index}
+        items={items}
+      />
+      <Next onNextClicked={handleNextClicked} />
     </>
   );
 }
@@ -25,18 +46,25 @@ function Banner({ word }: BannerProps) {
   return <h1>{word}</h1>;
 }
 
-function Prev() {
+interface PrevProps {
+  onPrevClicked: () => void;
+}
+
+function Prev({ onPrevClicked }: PrevProps) {
   return (
     <div>
-      <button>Prev</button>
+      <button onClick={onPrevClicked}>Prev</button>
     </div>
   );
 }
 
-function Next() {
+interface NextProps {
+  onNextClicked: () => void;
+}
+function Next({ onNextClicked }: NextProps) {
   return (
     <div>
-      <button>Next</button>
+      <button onClick={onNextClicked}>Next</button>
     </div>
   );
 }
@@ -44,14 +72,20 @@ function Next() {
 interface IndicatorsProps {
   items: Props['items'];
   currentIndex: number;
+  onIndicatorClicked: (index: number) => void;
 }
-function Indicators({ items, currentIndex }: IndicatorsProps) {
+function Indicators({
+  items,
+  currentIndex,
+  onIndicatorClicked,
+}: IndicatorsProps) {
   return (
     <>
       {items.map((_, index) => {
         return (
           <button
             key={index}
+            onClick={() => onIndicatorClicked(index)}
             style={{
               backgroundColor: currentIndex === index ? 'lightblue' : '',
             }}>
