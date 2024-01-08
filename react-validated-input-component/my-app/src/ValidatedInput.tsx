@@ -8,7 +8,6 @@ export default function ValidatedInput() {
   }
   function handleInputChanged(event) {
     const value = event.target.value;
-    console.log(value);
     setPassword(value);
   }
 
