@@ -23,7 +23,7 @@ export function UserDetails({ userId, onCancel }: Props) {
           `https://jsonplaceholder.typicode.com/users/${userId}`
         );
         if (!res.ok)
-          throw new Error(`Get users error: ${res.status} ${res.statusText}`);
+          throw new Error(`Get userID error: ${res.status} ${res.statusText}`);
         const responseUser = await res.json();
         setUser(responseUser);
         setIsLoading(false);
