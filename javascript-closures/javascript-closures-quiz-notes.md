@@ -11,7 +11,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What values does a closure contain?
   values from the lexical scope
 - When is a closure created?
-  when a value is used inside of a dynamic scope
+  in runtime
 - How can you tell if a function will be created with a closure?
   a value will be used inside of the function that was declared in outside of the current scope
 - In React, what is one important case where you need to know if a closure was created?
