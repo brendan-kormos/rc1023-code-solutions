@@ -28,7 +28,6 @@ export function Users() {
         if (!res.ok)
           throw new Error(`Get users error: ${res.status} ${res.statusText}`);
         const responseUsers = await res.json();
-        if (!responseUsers) throw new Error('failed to get users');
         setUsers(responseUsers);
         setIsLoading(false);
       } catch (err) {

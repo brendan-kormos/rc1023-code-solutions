@@ -25,7 +25,6 @@ export function UserDetails({ userId, onCancel }: Props) {
         if (!res.ok)
           throw new Error(`Get users error: ${res.status} ${res.statusText}`);
         const responseUser = await res.json();
-        if (!responseUser) throw new Error('failed to get users');
         setUser(responseUser);
         setIsLoading(false);
       } catch (err) {
