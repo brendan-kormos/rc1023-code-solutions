@@ -37,7 +37,7 @@ app.post('/api/auth/sign-up', async (req, res, next) => {
 
     const sql = `insert into
     "users" ("username", "hashedPassword")
-    values ($1, $2) returning *
+    values ($1, $2) returning "createdAt", "userId", "username"
     `;
     const params = [username, hashedPassword];
 
@@ -56,9 +56,9 @@ app.post('/api/auth/sign-up', async (req, res, next) => {
      *
      * Hint: Insert statements can include a `returning` clause to retrieve the insterted row(s).
      */
-    const dataEntryCopy = { ...dataEntry };
-    delete dataEntryCopy.hashedPassword;
-    res.status(201).json(dataEntryCopy);
+    // const dataEntryCopy = { ...dataEntry };
+    // delete dataEntryCopy.hashedPassword;
+    res.status(201).json(dataEntry);
   } catch (err) {
     next(err);
   }
