@@ -26,10 +26,11 @@ export function UserDetails({ userId, onCancel }: Props) {
           throw new Error(`Get userID error: ${res.status} ${res.statusText}`);
         const responseUser = await res.json();
         setUser(responseUser);
-        setIsLoading(false);
       } catch (err) {
         console.error(err);
         setError(err);
+      } finally {
+        setIsLoading(false);
       }
     }
     getUserDetails();
