@@ -1,0 +1,61 @@
+/* @import url("https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono"); */
+
+* {
+  box-sizing: border-box;
+}
+
+/* @font-face {
+  font-family: Symbola;
+  src: url('fonts/Symbola.ttf.woff') format('woff'),
+    url('fonts/Symbola.ttf.svg#Symbola') format('svg'),
+    url('fonts/Symbola.ttf.eot'),
+    url('fonts/Symbola.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+body {
+  /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
+  /* font: 1.2rem Ubuntu, sans-serif; */
+  font-family: Symbola, sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+  height: 100vh;
+
+  /* white-space:pre; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text-body {
+  display: flex;
+  height: 1.4em;
+  white-space: pre;
+}
+
+.text {
+  min-width: 0.7em;
+  text-align: center;
+}
+
+.selected {
+  border-bottom: solid 5px;
+
+  /* padding:.25rem; */
+  padding-bottom: 0.5rem;
+}
+
+.correct {
+  color: lime;
+}
+
+.incorrect {
+  color: rgb(255, 0, 0);
+}
