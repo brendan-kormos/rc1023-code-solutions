@@ -8,7 +8,7 @@ type Image = {
 };
 
 export function UploadForm() {
-  const [imageFile, setImageFile] = useState();
+  const [imageFile, setImageFile] = useState<string>();
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -18,8 +18,8 @@ export function UploadForm() {
         method: 'POST',
         body: formData,
       });
-      const body = await response.json();
-      setImageFile(body);
+      const body: Image = await response.json();
+      setImageFile(body.url);
     } catch (err) {
       console.error(err);
     }
@@ -74,6 +74,7 @@ export function UploadForm() {
             </div>
           </form>
         </div>
+        <img src={imageFile} />
       </div>
     </div>
   );
