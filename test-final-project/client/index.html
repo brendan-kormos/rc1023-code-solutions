@@ -34,22 +34,21 @@
     </style>
   </head>
 
-  <body style="position: relative;">
-    <a >change to canvas</a>
+  <body style="position: relative">
+    <a>change to canvas</a>
     <div id="canvas-wrapper">
-      <div style="top: -400px; left:20px">testDiv</div>
+      <div style="top: -400px; left: 20px">testDiv</div>
     </div>
     <script>
       // get our canvas element
       const canvas = document.querySelector('#canvas-wrapper');
+      const html = document.querySelector('html');
       const context = {}; //canvas.getContext("2d");
 
       // disable right clicking
       document.oncontextmenu = function () {
         return false;
       };
-
-
 
       // list of all strokes drawn
       const drawings = [];
@@ -100,8 +99,10 @@
         console.log(elements$);
         for (const element of elements$) {
           element.style.transform = `scale(${scale})`;
-          element.style.left = parseFloat(element.dataset.offsetX) + offsetX+"px"
-          element.style.top = parseFloat(element.dataset.offsetX) + offsetY+"px"
+          element.style.left =
+            parseFloat(element.dataset.offsetX) + offsetX + 'px';
+          element.style.top =
+            parseFloat(element.dataset.offsetY) + offsetY + 'px';
         }
         // context.fillStyle = '#fff';
         // context.fillRect(0, 0, canvas.width, canvas.height);
@@ -122,8 +123,8 @@
       console.log(elements$);
       for (const element of elements$) {
         element.style.transform = `scale(${scale})`;
-        element.dataset.offsetX = element.style.top
-        element.dataset.offsetY = element.style.bottom
+        element.dataset.offsetX = element.style.left;
+        element.dataset.offsetY = element.style.top;
       }
       // if the window changes size, redraw the canvas
       window.addEventListener('resize', (event) => {
@@ -131,17 +132,17 @@
       });
 
       // Mouse Event Handlers
-      canvas.addEventListener('mousedown', onMouseDown);
-      canvas.addEventListener('mouseup', onMouseUp, false);
-      canvas.addEventListener('mouseout', onMouseUp, false);
-      canvas.addEventListener('mousemove', onMouseMove, false);
-      canvas.addEventListener('wheel', onMouseWheel, false);
+      html.addEventListener('mousedown', onMouseDown);
+      html.addEventListener('mouseup', onMouseUp, false);
+      html.addEventListener('mouseout', onMouseUp, false);
+      html.addEventListener('mousemove', onMouseMove, false);
+      html.addEventListener('wheel', onMouseWheel, false);
 
       // Touch Event Handlers
-      canvas.addEventListener('touchstart', onTouchStart);
-      canvas.addEventListener('touchend', onTouchEnd);
-      canvas.addEventListener('touchcancel', onTouchEnd);
-      canvas.addEventListener('touchmove', onTouchMove);
+      html.addEventListener('touchstart', onTouchStart);
+      html.addEventListener('touchend', onTouchEnd);
+      html.addEventListener('touchcancel', onTouchEnd);
+      html.addEventListener('touchmove', onTouchMove);
 
       // mouse functions
       let leftMouseDown = false;
