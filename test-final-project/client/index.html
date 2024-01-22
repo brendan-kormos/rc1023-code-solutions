@@ -6,11 +6,21 @@
     <title>Infinite Canvas</title>
 
     <style>
+      a {
+        cursor: pointer;
+      }
+      #top-bar {
+        position: fixed;
+      }
+      #canvas-wrapper {
+        position: fixed;
+      }
       #canvas-wrapper > * {
         position: absolute;
       }
       html,
       body {
+        /* overflow: hidden; */
         width: 100%;
         height: 100%;
         margin: 0;
@@ -34,16 +44,28 @@
     </style>
   </head>
 
-  <body style="position: relative">
-    <a>change to canvas</a>
+  <body>
     <div id="canvas-wrapper">
-      <div style="top: -400px; left: 20px">testDiv</div>
+      <div style="top: 300px; left: 20px">testDiv</div>
+      <!-- <div style="border: 2px solid black; top: 0; left: 0px; width:50%; height: 50%">widthDIV</div> -->
+
+      <div style="top: 720px; left: 1280px">MIDDLE DIV</div>
     </div>
+    <div id="top-bar">
+      <a href="./canvas.html" style="top: 0; left: 0">change to canvas</a>
+      <a href="./dragndrop.html">drag and drop</a>
+    </div>
+
     <script>
+      // todo! move EVERYTHING by percentages
+
       // get our canvas element
       const canvas = document.querySelector('#canvas-wrapper');
+      const $topBar = document.querySelector('#top-bar');
       const html = document.querySelector('html');
-      const context = {}; //canvas.getContext("2d");
+      const context = {}; //canvas.getContext("2d");r
+
+      $topBar.style.top = '0px';
 
       // disable right clicking
       document.oncontextmenu = function () {
@@ -84,19 +106,34 @@
         return yScreen / scale - offsetY;
       }
       function trueHeight() {
-        return canvas.clientHeight / scale;
+        // const documentHeight = Math.max(
+        //   document.body.scrollHeight,
+        //   document.body.offsetHeight,
+        //   document.documentElement.clientHeight,
+        //   document.documentElement.scrollHeight,
+        //   document.documentElement.offsetHeight
+        // );
+        // return documentHeight / scale;
+        return canvas.offsetHeight / scale;
       }
       function trueWidth() {
-        return canvas.clientWidth / scale;
+        // const documentWidth = Math.max(
+        //   document.body.scrollWidth,
+        //   document.body.offsetWidth,
+        //   document.documentElement.clientWidth,
+        //   document.documentElement.scrollWidth,
+        //   document.documentElement.offsetWidth
+        // );
+        // return documentWidth / scale;
+        // return canvas.clientWidth / scale;
+        return canvas.offsetWidth / scale;
       }
 
       function redrawCanvas() {
         // set the canvas to the size of the window
-        console.log('here');
         canvas.style.width = '100%'; //document.body.clientWidth;
         canvas.style.height = '100%'; //document.body.clientHeight;
         const elements$ = canvas.querySelectorAll('*');
-        console.log(elements$);
         for (const element of elements$) {
           element.style.transform = `scale(${scale})`;
           element.style.left =
@@ -104,21 +141,9 @@
           element.style.top =
             parseFloat(element.dataset.offsetY) + offsetY + 'px';
         }
-        // context.fillStyle = '#fff';
-        // context.fillRect(0, 0, canvas.width, canvas.height);
-        // for (let i = 0; i < drawings.length; i++) {
-        //     const line = drawings[i];
-        //     drawLine(toScreenX(line.x0), toScreenY(line.y0), toScreenX(line.x1), toScreenY(line.y1));
-        // }
       }
       redrawCanvas();
 
-      // drawings.push({
-      //   x0: prevScaledX,
-      //   y0: prevScaledY,
-      //   x1: scaledX,
-      //   y1: scaledY,
-      // });
       const elements$ = canvas.querySelectorAll('*');
       console.log(elements$);
       for (const element of elements$) {
@@ -175,16 +200,6 @@
         const prevScaledY = toTrueY(prevCursorY);
 
         if (leftMouseDown) {
-          // add the line to our drawing history
-          drawings.push({
-            x0: prevScaledX,
-            y0: prevScaledY,
-            x1: scaledX,
-            y1: scaledY,
-          });
-          // draw a line
-          console.log(toScreenX(scaledX));
-          drawLine(prevCursorX, prevCursorY, cursorX, cursorY);
         }
         if (rightMouseDown) {
           // move the screen
@@ -200,34 +215,105 @@
         leftMouseDown = false;
         rightMouseDown = false;
       }
+
+      function getWindowOverflow() {
+        const windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+
+        const documentHeight = Math.max(
+          document.body.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.clientHeight,
+          document.documentElement.scrollHeight,
+          document.documentElement.offsetHeight
+        );
+
+        const windowWidth =
+          window.innerWidth || document.documentElement.clientWidth;
+        const documentWidth = Math.max(
+          document.body.scrollWidth,
+          document.body.offsetWidth,
+          document.documentElement.clientWidth,
+          document.documentElement.scrollWidth,
+          document.documentElement.offsetWidth
+        );
+        return [
+          Math.max(0, documentHeight - windowHeight),
+          Math.max(0, documentWidth - windowHeight),
+        ];
+      }
+
       function onMouseWheel(event) {
-        const deltaY = event.deltaY;
+        // const deltaY = event.deltaY;
+        // const scaleAmount = -deltaY / 500;
+        // const initialScale = scale;
+
+        // // Get the cursor position relative to the canvas
+        // const cursorX = event.pageX - canvas.getBoundingClientRect().left;
+        // const cursorY = event.pageY - canvas.getBoundingClientRect().top;
+
+        // // Calculate how much we need to zoom
+        // scale = scale * (1 + scaleAmount);
+
+        // // Get the relative position of the cursor
+        // const cursorRatioX = cursorX / canvas.clientWidth;
+        // const cursorRatioY = cursorY / canvas.clientHeight;
+
+        // // Calculate the amounts zoomed from each edge of the screen
+        // const unitsZoomedX = trueWidth() * (initialScale - scale);
+        // const unitsZoomedY = trueHeight() * (initialScale - scale);
+
+        // const unitsAddLeft = unitsZoomedX * cursorRatioX;
+        // const unitsAddTop = unitsZoomedY * cursorRatioY;
+
+        // // Adjust offsetX and offsetY based on the cursor position
+        // offsetX += unitsAddLeft;
+        // offsetY += unitsAddTop;
+
+        // const deltaY = event.deltaY;
+        // const scaleAmount = -deltaY / 500;
+        // const initialScale = scale;
+
+        // // Zoom the page based on where the cursor is
+        // const cursorX = event.pageX;
+        // const cursorY = event.pageY;
+
+        // // Calculate how much we need to zoom
+        // scale = scale * (1 + scaleAmount);
+
+        // // Get the relative position of the cursor
+        // const cursorRatioX = cursorX / canvas.clientWidth;
+        // const cursorRatioY = cursorY / canvas.clientHeight;
+
+        // // Adjust offsetX and offsetY based on the cursor position and zoom amount
+        // offsetX = cursorRatioX * (initialScale - scale) + offsetX * scale;
+        // offsetY = cursorRatioY * (initialScale - scale) + offsetY * scale;
+
+        const deltaY = event.deltaY; // scroll amount
+        console.log('deltaY', deltaY);
         const scaleAmount = -deltaY / 500;
+        const initialScale = scale;
         scale = scale * (1 + scaleAmount);
 
         // zoom the page based on where the cursor is
-        var distX = event.pageX / canvas.clientWidth;
-        var distY = event.pageY / canvas.clientHeight;
+        console.log('pagex', event.pageX);
+        var distX = event.pageX / trueWidth(); //percentage of the screen to the right
+        var distY = event.pageY / trueHeight();
 
         // calculate how much we need to zoom
+        const [xOverflow, yOverflow] = getWindowOverflow();
+        console.log('X', xOverflow);
+        console.log('Y', yOverflow);
         const unitsZoomedX = trueWidth() * scaleAmount;
         const unitsZoomedY = trueHeight() * scaleAmount;
 
         const unitsAddLeft = unitsZoomedX * distX;
         const unitsAddTop = unitsZoomedY * distY;
-
-        offsetX -= unitsAddLeft;
-        offsetY -= unitsAddTop;
+        console.log('left', unitsAddLeft);
+        offsetX = unitsAddLeft;
+        offsetY = unitsAddTop;
 
         redrawCanvas();
-      }
-      function drawLine(x0, y0, x1, y1) {
-        // context.beginPath();
-        // context.moveTo(x0, y0);
-        // context.lineTo(x1, y1);
-        // context.strokeStyle = '#000';
-        // context.lineWidth = 2;
-        // context.stroke();
       }
 
       // touch functions
@@ -261,14 +347,6 @@
         const prevScaledY = toTrueY(prevTouch0Y);
 
         if (singleTouch) {
-          // add to history
-          drawings.push({
-            x0: prevScaledX,
-            y0: prevScaledY,
-            x1: scaledX,
-            y1: scaledY,
-          });
-          drawLine(prevTouch0X, prevTouch0Y, touch0X, touch0Y);
         }
 
         if (doubleTouch) {
@@ -308,8 +386,8 @@
           // Get the relative position of the middle of the zoom.
           // 0, 0 would be top left.
           // 0, 1 would be top right etc.
-          var zoomRatioX = midX / canvas.clientWidth;
-          var zoomRatioY = midY / canvas.clientHeight;
+          var zoomRatioX = midX / canvas.offsetWidth;
+          var zoomRatioY = midY / canvas.offsetHeight;
 
           // calculate the amounts zoomed from each edge of the screen
           const unitsZoomedX = trueWidth() * scaleAmount;

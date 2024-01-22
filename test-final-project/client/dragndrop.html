@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+      }
+      #drop-zone {
+        width: 200px;
+        height: 200px;
+        margin-left: 200px;
+        background-color: rgb(160, 160, 160);
+      }
+      #card {
+        width: 50;
+        height: 50px;
+        background-color: pink;
+        border: 1px solid gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div draggable="true" id="card">
+        <h3>Items</h3>
+      </div>
+      <div id="drop-zone" />
+    </div>
+
+    <script>
+      const card = document.querySelector('#card');
+      const dropZone = document.querySelector('#drop-zone');
+
+      card.addEventListener('dragstart', function (event) {
+        console.log(event);
+      });
+
+      dropZone.addEventListener('dragover', function (event) {
+        event.preventDefault();
+      });
+
+      dropZone.addEventListener('drop', function (event) {
+        dropZone.prepend(card);
+      });
+    </script>
+  </body>
+</html>
