@@ -195,14 +195,24 @@ function onMouseMove(event) {
   const scaledX = scaledCursorPos(cursorX);
   const scaledY = scaledCursorPos(cursorY);
 
+  const prevScaledX = scaledCursorPos(cursorX);
+  const prevScaledY = scaledCursorPos(cursorY);
+
   const obj = stage.globalToLocal(cursorX, cursorY); // real position regardless of scale
-  const { x, y } = obj;
+  let { x, y } = obj;
+  x = Math.round(x);
+  y = Math.round(y);
   localCursorX = x;
   localCursorY = y;
 
+  const xDiff = cursorX - prevCursorX;
+  const yDiff = cursorY - prevCursorY;
+
+  const scaledXDiff = scaledX - prevScaledX;
+  const scaledYDiff = scaledY - prevScaledY;
+
   if (leftMouseDown) {
     // add the line to our drawing history
-    console.log('drawing new line!', x, y);
     drawings.push({
       x0: prevLocalCursorX,
       y0: prevLocalCursorY,
@@ -217,18 +227,15 @@ function onMouseMove(event) {
     );
   }
 
-  const xDiff = cursorX - prevCursorX
-  const yDiff = cursorY - prevCursorY
-  const scaledXDiff = scaledCursorPos(cursorX) - scaledCursorPos(prevCursorX);
-  const scaledYDiff = scaledCursorPos(cursorY) - scaledCursorPos(prevCursorY)
   if (rightMouseDown) {
     if (!foundNan) {
       if (isNaN(x)) {
         foundNan = !foundNan;
       }
       console.log('scaledX', scaledX);
-      console.log('scaledXDiff', scaledXDiff)
-      console.log('stageOffset', stage.x)
+      console.log('scaledXDiff', scaledXDiff);
+      console.log('stageOffset', stage.x);
+
       // console.log('prevLocalPos', prevLocalCursorX, prevLocalCursorY);
       // console.log('localPos', localCursorX, localCursorY);
       // console.log('xSubtracted', localCursorX - prevLocalCursorX);
@@ -251,19 +258,17 @@ function onMouseUp() {
   rightMouseDown = false;
 }
 
-// Mouse Event Handlers
-
-stage.canvas.addEventListener('mousedown', onMouseDown);
-stage.canvas.addEventListener('mouseup', onMouseUp, false);
-stage.canvas.addEventListener('mouseout', onMouseUp, false); // unclick mouse if out of canvas
-stage.canvas.addEventListener('mousemove', onMouseMove, false);
-
-// stage.addEventListener('wheel', onMouseWheel, false);
-
 function onMouseWheel(event) {
-  //   const deltaY = event.deltaY;
-  //   console.log(deltaY);
-  //   const scaleAmount = -deltaY / 500;
+  // how much the screen is meant to scroll: -100 or 100 (pixels) up is negative, down is positive
+  const deltaY = event.deltaY;
+
+  // becomes a percentage like .2 or -.2
+  // positive is zooming in
+  // negative is zooming out
+  const scaleAmount = -deltaY / 500;
+  stage.scale *= 1 + scaleAmount
+  console.log('new Scale', stage.scale)
+
   //   scale = scale * (1 + scaleAmount);
   //   stage.scale = scale;
   //   // zoom the page based on where the cursor is
@@ -284,3 +289,10 @@ function onMouseWheel(event) {
   // //
   //   // redrawCanvas();
 }
+
+stage.canvas.addEventListener('mousedown', onMouseDown);
+stage.canvas.addEventListener('mouseup', onMouseUp, false);
+stage.canvas.addEventListener('mouseout', onMouseUp, false); // unclick mouse if out of canvas
+stage.canvas.addEventListener('mousemove', onMouseMove, false);
+
+stage.canvas.addEventListener('wheel', onMouseWheel, false);
