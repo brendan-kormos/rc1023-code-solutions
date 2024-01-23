@@ -28,6 +28,11 @@
         user-select: none;
         /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
       }
+      #canvas-container {
+        overflow: hidden;
+        clip-path: inset(0px);
+      }
+      #canvas-container,
       #demoCanvas {
         border: 2px solid black;
         /* width:800px;
@@ -38,12 +43,15 @@
 
   <body>
     <a href="./index.html">go back to html</a>
-    <canvas id="demoCanvas">Your browser does not support HTML5 canvas</canvas>
+    <div id="canvas-container">
+      <canvas id="demoCanvas"
+        >Your browser does not support HTML5 canvas</canvas
+      >
+    </div>
+
     <!-- <script src="../../lib/easeljs-NEXT.combined.js"></script> -->
     <script src="./src/easelTest.tsx" type="module"></script>
     <script type="module">
-
-
       // get our canvas element
       // const canvas = document.getElementById('canvas');
       // const context = canvas.getContext('2d');
@@ -205,20 +213,25 @@
       //   scale = scale * (1 + scaleAmount);
 
       //   // zoom the page based on where the cursor is
-      //   var distX = event.pageX / canvas.clientWidth;
-      //   var distY = event.pageY / canvas.clientHeight;
+      // const rect = event.target.getBoundingClientRect();
 
-      //   // calculate how much we need to zoom
-      //   const unitsZoomedX = trueWidth() * scaleAmount;
-      //   const unitsZoomedY = trueHeight() * scaleAmount;
+      // cursorX = event.clientX - rect.left; //x position within the element.
+      // cursorY = event.clientY - rect.top; //y position within the element.
 
-      //   const unitsAddLeft = unitsZoomedX * distX;
-      //   const unitsAddTop = unitsZoomedY * distY;
+      // const distX = cursorX / canvas.clientWidth;
+      // const distY = cursorY / canvas.clientHeight;
 
-      //   offsetX -= unitsAddLeft;
-      //   offsetY -= unitsAddTop;
+      // // calculate how much we need to zoom
+      // const unitsZoomedX = trueWidth() * scaleAmount;
+      // const unitsZoomedY = trueHeight() * scaleAmount;
 
-      //   redrawCanvas();
+      // const unitsAddLeft = unitsZoomedX * distX;
+      // const unitsAddTop = unitsZoomedY * distY;
+
+      // offsetX -= unitsAddLeft;
+      // offsetY -= unitsAddTop;
+
+      // redrawCanvas();
       // }
       // function drawLine(x0, y0, x1, y1) {
       //   context.beginPath();

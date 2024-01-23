@@ -29,9 +29,6 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@thegraid/createjs-module": "^1.1.6",
-    "@types/easeljs": "^1.0.5",
-    "createjs-module": "^0.8.3",
-    "easeljs": "^1.0.2"
+    "@thegraid/createjs-module": "^1.1.6"
   }
 }
