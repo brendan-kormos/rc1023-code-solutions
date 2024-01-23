@@ -192,8 +192,11 @@
       }
       function onMouseMove(event) {
         // get mouse position
-        cursorX = event.pageX;
-        cursorY = event.pageY;
+
+        const rect = event.target.getBoundingClientRect();
+
+        cursorX = event.clientX - rect.left; //x position within the element.
+        cursorY = event.clientY - rect.top; //y position within the element.
         const scaledX = toTrueX(cursorX);
         const scaledY = toTrueY(cursorY);
         const prevScaledX = toTrueX(prevCursorX);
